@@ -1,6 +1,6 @@
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './pages/Home';
-// import Starred from './pages/Starred';
+import Starred from './pages/Starred';
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <Routes>
 
       <Route path="/" element={ <Home/>}/>
-      {/* <Route path="/" element={ <Starred/>}/> */}
+      <Route path="/Starred" element={ <Starred/> }/>
 
       {/* <Route path="/" element={<App />}>
         <Route index element={<Home />} />

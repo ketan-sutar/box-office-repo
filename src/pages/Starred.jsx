@@ -1,7 +1,10 @@
-import React from 'react'
 
-export const Starred = () => {
+const Starred = () => {
   return (
-    <div>Starred</div>
+    <div>
+      hello starred page
+    </div>
   )
 }
+
+export default Starred;
