@@ -2,7 +2,8 @@
 const Starred = () => {
   return (
     <div>
-      hello starred page
+
+      starred page
     </div>
   )
 }
