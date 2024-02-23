@@ -8,6 +8,7 @@ import SearchForm from '../components/SearchForm';
 import ShowGrid from '../components/Shows/ShowGrid';
 import ActorsGrid from '../components/Actors/ActorsGrid';
 import styled from 'styled-components';
+import { TextCenter } from '../components/common/TextCenter';
 
 const Home = () => {
   const [filter, setFilter] = useState(null);
@@ -32,7 +33,7 @@ const Home = () => {
     }
 
     if (apiData?.length === 0) {
-      return <div>No result</div>;
+      return <TextCenter>No result</TextCenter>;
     }
 
     if (apiData) {
