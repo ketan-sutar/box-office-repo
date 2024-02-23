@@ -1,6 +1,6 @@
 // import React from 'react'
 // import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import { searchForShows, searchForPeople } from './../api/tvmaze';
@@ -9,8 +9,12 @@ import ShowGrid from '../components/Shows/ShowGrid';
 import ActorsGrid from '../components/Actors/ActorsGrid';
 
 
+
+
 const Home = () => {
   const [filter, setFilter] = useState(null);
+
+  
 
   const { data: apiData, error: apiDataError } = useQuery({
     queryKey: ['search', filter],
