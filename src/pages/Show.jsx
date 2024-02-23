@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getShowById } from '../api/tvmaze';
 
-import { useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import ShowMainData from '../components/Shows/ShowMainData';
 import Details from '../components/Shows/Details';
@@ -13,7 +13,7 @@ const Show = () => {
   const { data: showData, error: showError } = useQuery({
     queryKey: ['show', showId],
     queryFn: () => getShowById(showId),
-    refetchOnWindowFocus:false,
+    refetchOnWindowFocus: false,
   });
 
   //   const {showData,showError}= useShowById(showId)
@@ -21,10 +21,18 @@ const Show = () => {
   if (showError) {
     return <div>we have error : {showError.message}</div>;
   }
+  
+  
+
+ 
 
   if (showData) {
     return (
       <div>
+        <Link to="/" >Go to home</Link>
+
+        
+
         <ShowMainData
           image={showData.image}
           name={showData.name}
@@ -44,19 +52,11 @@ const Show = () => {
         <div>
           <h2>Seasons</h2>
           <Season seasons={showData._embedded.seasons} />
-          
         </div>
         <div>
           <h2>Cast</h2>
           <Cast cast={showData._embedded.cast} />
-          
         </div>
-
-
-
-
-
-
       </div>
     );
   }
