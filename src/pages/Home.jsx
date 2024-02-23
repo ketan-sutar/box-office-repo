@@ -7,14 +7,10 @@ import { searchForShows, searchForPeople } from './../api/tvmaze';
 import SearchForm from '../components/SearchForm';
 import ShowGrid from '../components/Shows/ShowGrid';
 import ActorsGrid from '../components/Actors/ActorsGrid';
-
-
-
+import styled from 'styled-components';
 
 const Home = () => {
   const [filter, setFilter] = useState(null);
-
-  
 
   const { data: apiData, error: apiDataError } = useQuery({
     queryKey: ['search', filter],
@@ -23,11 +19,11 @@ const Home = () => {
         ? searchForShows(filter.q)
         : searchForPeople(filter.q),
     enabled: !!filter,
-    refetchOnWindowFocus:false
+    refetchOnWindowFocus: false,
   });
 
   const onSearch = async ({ q, serachOption }) => {
-    setFilter({q, serachOption});
+    setFilter({ q, serachOption });
   };
 
   const renderApiData = () => {
@@ -51,6 +47,7 @@ const Home = () => {
 
   return (
     <div>
+      
       <SearchForm onSearch={onSearch} />
 
       <div>{renderApiData()}</div>
