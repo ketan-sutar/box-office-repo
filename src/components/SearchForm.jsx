@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 
-
-const SearchForm = ({onSearch}) => {
-    
+const SearchForm = ({ onSearch }) => {
   const [searchStr, setSearchStr] = useState('');
   const [serachOption, setSearchOption] = useState('shows');
 
@@ -14,14 +12,15 @@ const SearchForm = ({onSearch}) => {
     setSearchStr(ev.target.value);
   };
 
-  const onSUbmit=(ev)=>{
-    ev.preventDefault()
+  const onSUbmit = ev => {
+    ev.preventDefault();
 
-    const options={
-        q: searchStr,serachOption
-    }
+    const options = {
+      q: searchStr,
+      serachOption,
+    };
     onSearch(options);
-  }
+  };
 
   return (
     <div>

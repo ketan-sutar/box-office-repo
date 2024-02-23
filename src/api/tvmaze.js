@@ -8,3 +8,5 @@ const apiGet = async querryStrings => {
 
 export const searchForShows = querry => apiGet(`/search/shows?q=${querry}`);
 export const searchForPeople = querry => apiGet(`/search/people?q=${querry}`);
+
+export  const getShowById = (showId)=> apiGet(`/shows/${showId}`)
