@@ -2,7 +2,7 @@
   "name": "box-office",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://box-office-repo.github.io/my-app",
+  "homepage": "https://ketan-sutar.github.io/box-office-repo",
   "dependencies": {
     "@tanstack/react-query": "^5.22.2",
     "gh-pages": "^6.1.1",
@@ -31,8 +31,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write src/**/*.{js,jjsx}"
-    
+    "format": "prettier --write src/**/*.{js,jjsx}",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
