@@ -1,6 +1,7 @@
 import React from 'react'
 import ActorCard from './ActorCard';
 import { FlexGrid } from '../common/FlexGrid';
+import NotFoundImgSrc from '/public/notfnd.png'
 
 const ActorsGrid = ({actors}) => {
     return (
@@ -13,7 +14,7 @@ const ActorsGrid = ({actors}) => {
               birthday={data.person.birthday}
               deathday={data.person.deathday}
               gender={data.person.gender}
-              image={data.person.image ? data.person.image.medium : 'notfnd.png'}
+              image={data.person.image ? data.person.image.medium : NotFoundImgSrc}
 
              
             />
