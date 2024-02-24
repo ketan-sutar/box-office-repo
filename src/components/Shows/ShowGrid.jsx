@@ -1,12 +1,10 @@
 import { useEffect, useReducer } from 'react';
 import ShowCard from './ShowCard';
 import { useStarredShow } from '../../lib/useStarredShow';
-import {FlexGrid} from '../common/FlexGrid'
-import NotFoundImgSrc from '/public/notfnd.png'
-
+import { FlexGrid } from '../common/FlexGrid';
 
 const ShowGrid = ({ shows }) => {
-  const [starredShow,dispatchStarred] =useStarredShow()
+  const [starredShow, dispatchStarred] = useStarredShow();
 
   const onStarMeCLick = showId => {
     const isStarred = starredShow.includes(showId);
@@ -25,7 +23,7 @@ const ShowGrid = ({ shows }) => {
           name={data.show.name}
           id={data.show.id}
           summary={data.show.summary}
-          image={data.show.image ? data.show.image.medium : NotFoundImgSrc}
+          image={data.show.image ? data.show.image.medium : 'notfnd.png'}
           onStarMeCLick={onStarMeCLick}
           isStarred={starredShow.includes(data.show.id)}
         />

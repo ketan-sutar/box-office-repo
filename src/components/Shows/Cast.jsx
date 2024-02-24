@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import NotFoundImgSrc from '/public/notfnd.png'
+import NotFounImgSrc from '../../../public/notfnd.png'
 
 
 const Cast = ({cast}) => {
@@ -10,7 +10,7 @@ const Cast = ({cast}) => {
         {cast.map(({person,character,voice})=>(
             <div key={person.id} className='cast-item' >
                 <div>
-                    <img src={person.image ? person.image.medium: NotFoundImgSrc}  className='pic-wrapper'></img>
+                    <img src={person.image ? person.image.medium: 'notfnd.png'}  className='pic-wrapper'></img>
                 
                 </div>
 
